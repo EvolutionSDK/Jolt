@@ -222,6 +222,7 @@
 				 * @author Nate Ferrero
 				 */
 				var section = $('.jolt-section-' + data.section);
+
 				if(!section.length)
 					throw new Error("Jolt section '"+data.section+"' not found");
 
@@ -295,7 +296,7 @@
 				var j = $(jsc[i]);
 				var cls = j.attr('jolt-selected-class');
 				j.find('.'+cls).removeClass(cls);
-				var items = j.find('a[jolt-match]');
+				var items = j.find('*[jolt-match]');
 				for(var j = 0; j < items.length; j++) {
 					var matches = $(items[j]).attr('jolt-match').split(',');
 					for(var k = 0; k < matches.length; k++) {
